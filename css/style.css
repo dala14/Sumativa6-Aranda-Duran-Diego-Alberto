@@ -1,0 +1,180 @@
+
+.carrusel-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #fff8e1 100%);
+    position: relative;
+}
+
+.carrusel-slide {
+    min-height: 500px;
+    background: #fff;
+}
+
+
+.carrusel-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+}
+.carrusel-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+.carousel-item.active .carrusel-img {
+    transform: scale(1.05);
+}
+
+.carrusel-info {
+    padding: 3rem 2.5rem;
+}
+
+.carrusel-titulo {
+    font-family: 'Bangers', cursive;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    color: var(--color-dark);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.carrusel-desc {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.precio-wrapper {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+}
+.precio-antes-carrusel {
+    font-size: 1.2rem;
+    color: #999;
+    text-decoration: line-through;
+    font-weight: 500;
+}
+.precio-actual-carrusel {
+    font-size: 2.2rem;
+    color: var(--color-secondary);
+    font-weight: 700;
+    font-family: 'Bangers', cursive;
+    letter-spacing: 2px;
+}
+
+.badge-oferta-carrusel,
+.badge-nuevo-carrusel,
+.badge-destacado-carrusel {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 0.6rem 1.2rem;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 30px;
+    color: white;
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    animation: pulse 2s infinite;
+}
+.badge-oferta-carrusel {
+    background: var(--color-secondary);
+}
+.badge-nuevo-carrusel {
+    background: #0d6efd;
+}
+.badge-destacado-carrusel {
+    background: #198754;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+
+/* Controles del carrusel */
+.carrusel-control {
+    background-color: var(--color-dark);
+    border-radius: 50%;
+    padding: 1.2rem;
+    background-size: 55%;
+    opacity: 0.85;
+    transition: var(--transition);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.carousel-control-prev:hover .carrusel-control,
+.carousel-control-next:hover .carrusel-control {
+    background-color: var(--color-primary);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Indicadores */
+.carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--color-dark);
+    opacity: 0.4;
+    margin: 0 5px;
+    transition: var(--transition);
+}
+.carousel-indicators .active {
+    background-color: var(--color-primary);
+    opacity: 1;
+    width: 30px;
+    border-radius: 6px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 767.98px) {
+    .carrusel-slide {
+        min-height: auto;
+    }
+    .carrusel-img-wrapper {
+        height: 300px;
+    }
+    .carrusel-info {
+        padding: 2rem 1.5rem;
+        text-align: center;
+    }
+    .carrusel-titulo {
+        font-size: 1.8rem;
+    }
+    .carrusel-desc {
+        font-size: 0.95rem;
+    }
+    .precio-actual-carrusel {
+        font-size: 1.7rem;
+    }
+    .precio-wrapper {
+        justify-content: center;
+    }
+    .carrusel-info .d-flex {
+        justify-content: center;
+    }
+    .carrusel-info .btn {
+        width: 100%;
+        font-size: 1rem;
+    }
+    .badge-oferta-carrusel,
+    .badge-nuevo-carrusel,
+    .badge-destacado-carrusel {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.9rem;
+    }
+    .carrusel-control {
+        padding: 0.8rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .carrusel-info {
+        padding: 2rem 1.5rem;
+    }
+    .carrusel-titulo {
+        font-size: 2rem;
+    }
+}
